@@ -1,0 +1,24 @@
+{
+  "name": "team-bigfive",
+  "displayName": "Team Big Five Harness",
+  "version": "1.0.0",
+  "description": "Applies Team Science's 'Big Five of Teamwork' (Salas, Sims & Burke 2005) to Claude Code agent teams. Ships 3 agents + 4 skills that enforce shared mental models, closed-loop communication, mutual performance monitoring, and backup behavior so collaborative tasks run as a high-performing team.",
+  "author": {
+    "name": "tobyilee",
+    "url": "https://github.com/tobyilee"
+  },
+  "homepage": "https://github.com/tobyilee/team-bigfive",
+  "repository": "https://github.com/tobyilee/team-bigfive",
+  "license": "MIT",
+  "keywords": [
+    "team-science",
+    "team-big-five",
+    "teamwork",
+    "agent-team",
+    "orchestration",
+    "shared-mental-model",
+    "closed-loop-communication",
+    "multi-agent",
+    "claude-code-plugin"
+  ]
+}

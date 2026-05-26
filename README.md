@@ -6,6 +6,38 @@ Team Science의 **"팀워크 빅파이브"**(Salas, Sims & Burke, 2005)를 Claud
 
 ---
 
+## 설치 (Claude Code 플러그인)
+
+이 저장소는 Claude Code 플러그인이다. 로컬 설치 두 가지 방법:
+
+### 방법 A — 로컬 마켓플레이스 (권장)
+```bash
+# 1. 이 저장소를 클론
+git clone https://github.com/tobyilee/team-bigfive.git
+cd team-bigfive
+
+# 2. 로컬 마켓플레이스 등록 (저장소 루트 경로)
+claude plugin marketplace add "$(pwd)"
+
+# 3. 플러그인 설치
+claude plugin install team-bigfive@team-bigfive-marketplace
+```
+
+### 방법 B — 개발용 직접 로드 (설치 없이)
+```bash
+claude --plugin-dir /path/to/team-bigfive
+```
+
+설치 후 스킬·에이전트는 `team-bigfive:` 네임스페이스로 노출된다 (예: 스킬 `team-bigfive:team-bigfive-orchestrator`, 에이전트 `team-bigfive:team-lead`).
+
+**업데이트/제거:**
+```bash
+claude plugin marketplace update team-bigfive-marketplace
+claude plugin uninstall team-bigfive@team-bigfive-marketplace
+```
+
+---
+
 ## 빠른 시작
 
 협업이 필요한 과제를 줄 때 트리거 표현을 쓰면 오케스트레이터가 작동한다:
@@ -63,18 +95,20 @@ Team Science의 **"팀워크 빅파이브"**(Salas, Sims & Burke, 2005)를 Claud
 ## 구조
 
 ```
-.claude/
-├── agents/                          # 누가 (역할 정의)
-│   ├── team-lead.md                 # 리더십 + 적응성
-│   ├── contributor.md               # 팀 지향 + 백업 + 신뢰 (N명 스폰)
-│   └── performance-monitor.md       # 상호 모니터링 + 백업 촉발
-└── skills/                          # 어떻게 (절차)
-    ├── team-bigfive-orchestrator/   # 8개 메커니즘을 워크플로우로 조율
-    │   ├── SKILL.md
-    │   └── references/bigfive-theory.md
-    ├── shared-mental-model/         # 조율 메커니즘 1
-    ├── closed-loop-comms/           # 조율 메커니즘 2
-    └── mutual-monitoring/           # Big Five 2·3 (모니터링+백업)
+.claude-plugin/
+├── plugin.json                      # 플러그인 매니페스트
+└── marketplace.json                 # 로컬 마켓플레이스 카탈로그
+agents/                              # 누가 (역할 정의)
+├── team-lead.md                     # 리더십 + 적응성
+├── contributor.md                   # 팀 지향 + 백업 + 신뢰 (N명 스폰)
+└── performance-monitor.md           # 상호 모니터링 + 백업 촉발
+skills/                              # 어떻게 (절차)
+├── team-bigfive-orchestrator/       # 8개 메커니즘을 워크플로우로 조율
+│   ├── SKILL.md
+│   └── references/bigfive-theory.md
+├── shared-mental-model/             # 조율 메커니즘 1
+├── closed-loop-comms/               # 조율 메커니즘 2
+└── mutual-monitoring/               # Big Five 2·3 (모니터링+백업)
 docs/TEAM-SCIENCE.md                 # 이론 상세 해설
 CLAUDE.md                            # 하네스 포인터 + 변경 이력
 ```
