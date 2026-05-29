@@ -179,11 +179,27 @@ LLM 에이전트 팀에 대한 함의: 단순히 독립적인 하위 작업을 �
 
 ---
 
+## 8.5 v2에서 보강한 팀 과학 개념 (2026-05-29)
+
+초기 버전은 Salas 2005의 Big Five를 충실히 옮겼지만, 이후 전통(특히 IMOI/에피소드 사이클)의 고가치 개념을 빠뜨렸다. v2는 이를 보강했다:
+
+- **에피소드 사이클 — 전환기 ↔ 실행기 (Marks, Mathieu & Zaccaro, 2001).** 팀 프로세스는 *전환 단계*(계획·목표 구체화)와 *실행 단계*가 교대한다. v2는 빈약했던 전환 단계를 보강했다: **킥오프 브리핑**(작업 전 각자 슬라이스 read-back → SMM이 *작성됨*에서 *공유됨*으로)과 **디브리핑/AAR**(사후 검토). 디브리핑은 팀 개입 중 실증 지지가 가장 강한 축에 속한다(Tannenbaum & Cerasoli, 2013 메타분석).
+- **팀 성과의 측정 가능성.** Big Five의 전제는 성과가 측정 가능하다는 것이다. v2의 **스코어카드**(DRIFT·백업·적응·라운드·rubric 충족)가 이를 계량해, 하네스의 "진화" 목표에 학습 신호를 공급한다.
+- **보정된 신뢰 (calibrated trust).** 문헌의 신뢰는 이진이 아니라 *신뢰성 증거로 보정된 trust-but-verify*다. v2는 "검증된 산출물 재작업 금지"라는 뭉툭한 규칙을 **경계면별 신뢰 등급**(결과 비용에 비례)으로 대체하고, 계약 버전에 검증을 묶었다.
+- **심리적 안전 (Edmondson, 1999).** 팀 학습·오류 포착의 최강 예측 변수. v2는 **FLAG-UNCERTAIN/DISSENT** 채널을 1급 신호로 도입해, 에이전트가 모르면서 지어내는(confabulation) 실패 대신 불확실성·이견을 가시화하게 했다.
+- **사전 적응.** 적응이 DRIFT 사후 대응만이 아니라, SMM의 명시된 위험 가정을 monitor가 능동 감시하는 *선제적* 형태도 갖게 했다.
+- **상호의존성에 따른 강도 조절.** 5장의 핵심 caveat(효과는 상호의존성에 비례)을 prose 경고에서 **Phase 0.5 triage 게이트**로 운영화했다.
+
+---
+
 ## 9. 참고문헌
 
 - Salas, E., Sims, D. E., & Burke, C. S. (2005). *Is there a "Big Five" in Teamwork?* Small Group Research, 36(5), 555–599. — 본 하네스의 핵심 프레임워크.
 - Salas, E., Shuffler, M. L., Thayer, A. L., Bedwell, W. L., & Lazzara, E. H. (2015). *Understanding and Improving Teamwork in Organizations: A Scientifically Based Practical Guide.* Human Resource Management. — Big Five 이후 실무 적용 종합.
 - Cannon-Bowers, J. A., Salas, E., & Converse, S. (1993). *Shared mental models in expert team decision making.* — 공유 정신 모델 이론.
 - McIntyre, R. M., & Salas, E. (1995). *Measuring and managing for team performance.* — 상호 성과 모니터링·백업의 초기 정식화.
+- Marks, M. A., Mathieu, J. E., & Zaccaro, S. J. (2001). *A temporally based framework and taxonomy of team processes.* Academy of Management Review. — IMOI/에피소드 사이클(전환기↔실행기). v2의 킥오프·디브리핑 근거.
+- Tannenbaum, S. I., & Cerasoli, C. P. (2013). *Do team and individual debriefs enhance performance? A meta-analysis.* Human Factors. — 디브리핑(AAR)의 성과 효과.
+- Edmondson, A. (1999). *Psychological safety and learning behavior in work teams.* Administrative Science Quarterly. — v2의 FLAG-UNCERTAIN/DISSENT 채널 근거.
 
 > 참고: 본 문서의 이론 요약은 위 공개 학술 프레임워크에 기반한다. 구체 수치·메타분석 효과크기를 인용해야 한다면 원문을 직접 확인할 것.
