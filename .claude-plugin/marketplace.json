@@ -1,0 +1,21 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "team-bigfive-marketplace",
+  "description": "Marketplace hosting the Team Big Five harness plugin.",
+  "owner": {
+    "name": "tobyilee",
+    "url": "https://github.com/tobyilee"
+  },
+  "plugins": [
+    {
+      "name": "team-bigfive",
+      "description": "Team Science 'Big Five of Teamwork' applied to Claude Code agent teams — shared mental models, closed-loop communication, mutual monitoring, backup behavior, calibrated trust, and after-action debriefs. Works for code, research, writing, and creative tasks.",
+      "author": {
+        "name": "tobyilee"
+      },
+      "source": "./",
+      "category": "productivity",
+      "version": "2.0.0"
+    }
+  ]
+}

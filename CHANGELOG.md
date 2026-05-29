@@ -44,6 +44,9 @@
 ### Changed
 - 데이터 흐름·에러 핸들링 표를 위 메커니즘에 맞게 갱신(빌드 실패·머지 충돌·팀 도구 미가용 행 추가).
 
+### Packaging
+- **설치형 Claude Code 플러그인 + 마켓플레이스로 변환.** 컴포넌트를 리포 루트 `agents/`·`skills/`로 이동, `.claude-plugin/plugin.json`(v2.0.0)·`.claude-plugin/marketplace.json` 추가. `/plugin marketplace add tobyilee/team-bigfive` → `/plugin install team-bigfive@team-bigfive-marketplace`로 설치. README에 설치 절차 반영.
+
 ## [1.0.0] — 2026-05-26
 - 초기 구성: 에이전트 3(team-lead/contributor/performance-monitor) + 스킬 4(orchestrator/SMM/closed-loop/mutual-monitoring) + 이론 해설 문서(TEAM-SCIENCE.md).
 - 이후 README 추가, 설치형 Claude Code 플러그인으로 변환(`plugin` 브랜치).

@@ -8,6 +8,33 @@ Team Science의 **"팀워크 빅파이브"**(Salas, Sims & Burke, 2005)를 Claud
 
 ---
 
+## 설치 (Claude Code 플러그인)
+
+이 리포지토리는 설치형 Claude Code 플러그인이자 마켓플레이스다. 한 번 설치하면 어느 프로젝트에서든 트리거 표현으로 팀이 작동한다.
+
+**1) 마켓플레이스 추가 + 설치:**
+```
+/plugin marketplace add tobyilee/team-bigfive
+/plugin install team-bigfive@team-bigfive-marketplace
+```
+
+**2) 또는 대화형 UI:**
+```
+/plugin marketplace add tobyilee/team-bigfive
+/plugin            # 메뉴에서 team-bigfive 선택 → Install
+```
+
+로컬 경로(클론한 디렉터리)로도 추가 가능:
+```
+/plugin marketplace add /path/to/team-bigfive
+```
+
+설치 후 제공되는 것: 에이전트 3(`team-lead`/`contributor`/`performance-monitor`) + 스킬 4(`team-bigfive-orchestrator` 외 3개 조율 메커니즘). 확인은 `/plugin` 메뉴 또는 스킬 목록.
+
+> 플러그인 컴포넌트는 리포 루트의 `agents/`·`skills/`에 있고, 패키징은 `.claude-plugin/`(plugin.json·marketplace.json)에 있다.
+
+---
+
 ## 빠른 시작
 
 협업이 필요한 과제를 줄 때 트리거 표현을 쓰면 오케스트레이터가 작동한다:
@@ -78,18 +105,20 @@ Team Science의 **"팀워크 빅파이브"**(Salas, Sims & Burke, 2005)를 Claud
 ## 구조
 
 ```
-.claude/
-├── agents/                          # 누가 (역할 정의, tools·model frontmatter 포함)
+.claude-plugin/                      # 플러그인 패키징
+│   ├── plugin.json                  # 플러그인 매니페스트 (v2.0.0)
+│   └── marketplace.json             # 마켓플레이스 정의
+agents/                              # 누가 (역할 정의, tools·model frontmatter 포함)
 │   ├── team-lead.md                 # 리더십 + 적응성 (메인 컨텍스트가 채택, opus)
 │   ├── contributor.md               # 팀 지향 + 백업 + 신뢰 (N명 스폰, sonnet 기본)
 │   └── performance-monitor.md       # 상호 모니터링 + 실행 게이트 + 스코어카드 (sonnet)
-└── skills/                          # 어떻게 (절차)
-    ├── team-bigfive-orchestrator/   # 8개 메커니즘을 워크플로우로 조율
-    │   ├── SKILL.md
-    │   └── references/bigfive-theory.md
-    ├── shared-mental-model/         # 조율 메커니즘 1 (과제 유형 적응 SMM)
-    ├── closed-loop-comms/           # 조율 메커니즘 2 (+ 심리적 안전 채널)
-    └── mutual-monitoring/           # Big Five 2·3 (실행 게이트 + 스코어카드)
+skills/                              # 어떻게 (절차)
+│   ├── team-bigfive-orchestrator/   # 8개 메커니즘을 워크플로우로 조율
+│   │   ├── SKILL.md
+│   │   └── references/bigfive-theory.md
+│   ├── shared-mental-model/         # 조율 메커니즘 1 (과제 유형 적응 SMM)
+│   ├── closed-loop-comms/           # 조율 메커니즘 2 (+ 심리적 안전 채널)
+│   └── mutual-monitoring/           # Big Five 2·3 (실행 게이트 + 스코어카드)
 docs/TEAM-SCIENCE.md                 # 이론 상세 해설
 CHANGELOG.md                         # 버전별 변경 이력
 CLAUDE.md                            # 하네스 포인터 + 변경 이력
